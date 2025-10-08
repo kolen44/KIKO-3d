@@ -100,9 +100,9 @@ scene.background = cubeTextureLoader.load([
 ]);
 
 // ******  CONTROLS  ******
-const gui = new dat.GUI({ autoPlace: false });
-const customContainer = document.getElementById('gui-container');
-customContainer.appendChild(gui.domElement);
+// const gui = new dat.GUI({ autoPlace: false });
+// const customContainer = document.getElementById('gui-container');
+// customContainer.appendChild(gui.domElement);
 
 // ****** SETTINGS FOR INTERACTIVE CONTROLS  ******
 const settings = {
@@ -111,13 +111,14 @@ const settings = {
   sunIntensity: 1.9
 };
 
-gui.add(settings, 'accelerationOrbit', 0, 10).onChange(value => {
-});
-gui.add(settings, 'acceleration', 0, 10).onChange(value => {
-});
-gui.add(settings, 'sunIntensity', 1, 10).onChange(value => {
-  sunMat.emissiveIntensity = value;
-});
+//GUI
+// gui.add(settings, 'accelerationOrbit', 0, 10).onChange(value => {
+// });
+// gui.add(settings, 'acceleration', 0, 10).onChange(value => {
+// });
+// gui.add(settings, 'sunIntensity', 1, 10).onChange(value => {
+//   sunMat.emissiveIntensity = value;
+// });
 
 // mouse movement
 const raycaster = new THREE.Raycaster();
