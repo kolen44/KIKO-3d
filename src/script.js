@@ -925,11 +925,11 @@ window.closePlanetInfo = function() {
 //HERE 2
 
 // --- Конфигурация безопасности: список дозволенных origin'ов родителя
-const ALLOWED_PARENT_ORIGINS = ['http://localhost:3000']; // <- сюда добавь origin родителя
-let lastParentOrigin = ALLOWED_PARENT_ORIGINS[0]; // запасной вариант для ответов
+const ALLOWED_PARENT_ORIGINS = ['*']; 
+let lastParentOrigin = '*'; // запасной вариант для ответов
 
 function postToParent(payload) {
-  const target = lastParentOrigin || ALLOWED_PARENT_ORIGINS[0] || '*';
+  const target = lastParentOrigin || '*';
   try {
     window.parent.postMessage(payload, target);
   } catch (err) {
