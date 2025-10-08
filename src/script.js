@@ -246,16 +246,8 @@ function identifyPlanet(clickedObject) {
   if (selectedPlanetObj && planetDataPrompt) {
     (async () => {
       try {
-        const response = await client.responses.create({
-          model: 'gpt-4o',
-          instructions: 'Ты - астрономический гид для детей. Дай краткую, веселую историю планеты, интересные факты и информацию о потенциальных местах для жизни в будущем, ориентируясь на детей. Весь ответ должен быть до 200 слов.',
-          input: planetDataPrompt,
-        });
-
-        const aiResponseText = response.output[0].content[0].text;
-        console.log(`[AI] `, aiResponseText);
-        // Display the AI response in the details section
-        postToParent({type: 'response', response: aiResponseText})
+        //Логика ИИ убрана
+        postToParent({type: 'response', response: selectedPlanetObj})
 
       } catch (error) {
         console.error('Error fetching AI response:', error);
