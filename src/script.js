@@ -246,7 +246,7 @@ function identifyPlanet(clickedObject) {
   if (selectedPlanetObj && planetDataPrompt) {
     (async () => {
       try {
-        //Логика ИИ убрана
+        //Логика ИИ
         postToParent({type: 'response', response: selectedPlanetObj})
 
       } catch (error) {
@@ -931,11 +931,6 @@ function postToParent(payload) {
 
 /* ---------- Приём команд от родителя ---------- */
 window.addEventListener('message', (event) => {
-  // защита: принимаем только от разрешённых origin'ов
-  if (!ALLOWED_PARENT_ORIGINS.includes(event.origin)) {
-    console.warn('Rejected message from origin', event.origin);
-    return;
-  }
   lastParentOrigin = event.origin; // запомним, куда отвечать
 
   const data = event.data || {};
